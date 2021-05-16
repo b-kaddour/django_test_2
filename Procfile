@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: python manage.py runserver --noreload
+web: web: gunicorn comme_un_chef.wsgi --preload
