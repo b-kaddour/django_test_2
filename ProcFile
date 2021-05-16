@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath comme_un_chef comme_un_chef.wsgi
+web: python manage.py runserver 0.0.0.0:80
