@@ -1,0 +1,1 @@
+web: gunicorn comme_un_chef.wsgi
