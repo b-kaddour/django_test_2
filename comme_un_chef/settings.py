@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import mimetypes
 import os
+import django_heroku
 
 from decouple import config
 from pathlib import Path
@@ -141,3 +142,5 @@ mimetypes
 mimetypes.add_type("application/javascript", ".js", True)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# Activate Django-Heroku.
+django_heroku.settings(locals())
