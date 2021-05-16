@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+{% block content %}
+    <h1>Mon premier titre</h1>
+<ul>
+{% for x in recette %}
+    <li><img src="{{x.image_url}}"/><br>{{x.titre}} <br> {{x.description}}</li>
+{% endfor %}
+</ul>
+{% endblock %}
