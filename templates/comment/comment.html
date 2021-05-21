@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block content %}
+    <h1>Les commentaire</h1>
+
+<ul>
+    {% for x in comment %}
+
+        <li>{{x.pseudo}} à {{ x.created_date}} <br> {{x.comment}}</li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Recette
 from .models import Ingredient
+from .models import Recette
+from .models import Comment
 
 # Register your models here.
 class RecetteAdmin(admin.ModelAdmin):
@@ -8,3 +9,4 @@ class RecetteAdmin(admin.ModelAdmin):
 
 admin.site.register(Recette, RecetteAdmin)
 admin.site.register(Ingredient)
+admin.site.register(Comment)

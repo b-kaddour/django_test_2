@@ -22,7 +22,9 @@ from recettes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('form.urls')),
     path('', views.index, name='index'),
+    path('comment', views.comment, name='comment'),
+    path('commentaires', views.commentaires, name='commentaires'),
+    path('recette/<int:primary_key>', views.recette_detail_view, name='recette-detail'),
     path('__debug__/', include(debug_toolbar.urls)),
 ]

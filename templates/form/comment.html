@@ -1,0 +1,24 @@
+<form method="post" action="{% url "comment" %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Pseudo</td>
+            <td>
+                <input type="text" name="pseudo" />
+            </td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td>
+                <textarea name="comment">
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Commenter" id="submit" />
+            </td>
+        </tr>
+    </table>
+</form>

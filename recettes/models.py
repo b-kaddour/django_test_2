@@ -41,4 +41,7 @@ class Recette(models.Model):
     def __str__(self):
         return self.titre
 
-
+class Comment(models.Model):
+    pseudo=models.CharField(max_length=255)
+    comment=models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
