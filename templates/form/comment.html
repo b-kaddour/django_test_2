@@ -1,15 +1,20 @@
+<!-- PATH : /template/form/comment.html-->
+<!-- Dans la méthode action nous faisons appel à la page qui va réceptionner les informations du formulaire puis les traiter et les envoyer en base de données -->
 <form method="post" action="{% url "comment" %}">
+    <!-- Configuration de sécurité des formulaires contre Cross site request forgery-->
     {% csrf_token %}
     <table>
         <tr>
             <td>Pseudo</td>
             <td>
+                <!-- Création d'un champ -->
                 <input type="text" name="pseudo" />
             </td>
         </tr>
         <tr>
             <td>Message</td>
             <td>
+                <!-- Création d'une zone de test -->
                 <textarea name="comment">
                 </textarea>
             </td>
@@ -17,7 +22,7 @@
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Commenter" id="submit" />
+                <input type="submit" value="Commenter" />
             </td>
         </tr>
     </table>

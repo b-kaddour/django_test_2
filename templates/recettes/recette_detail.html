@@ -1,10 +1,22 @@
+{# PATH : /template/recette/recette_detail.html #}
+
+
 {% extends "base.html" %}
 
 {% block content %}
+
   <h1>{{ recette.titre }}</h1>
   <p><strong>Date de création:</strong> {{ recette.created_date }}</p>
   <img src="{{recette.image_url}}" height="300"/>
+  {#
+    Dans l'appel d'affichage de recette.ingredient, nous avons ajouter un filtre permettant
+    d'intégrer le retour à la ligne se trouvant en base de donnée ; Pour en savoir plus avec
+    les filtres https://docs.djangoproject.com/en/3.1/ref/templates/builtins/
+  #}
   <p><strong>Ingredient:</strong> {{recette.ingredient | linebreaksbr }}</p>
   <p><strong>Description:</strong> {{recette.description}}</p>
-{% include '../form/comment.html' %}
+
+  {# On fait une inclusion (insertion) d'un template existant au sein de cette page #}
+  {% include '../form/comment.html' %}
+
 {% endblock %}

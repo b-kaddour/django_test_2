@@ -23,8 +23,14 @@ from recettes import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    # On rajoute ces deux lignes
     path('comment', views.comment, name='comment'),
     path('commentaires', views.commentaires, name='commentaires'),
+    # on rajoute aussi cette ligne qui a un petit plus dans l'url
+    # /<int:primary_key> permet de définir que la primary_key
+    # attendu doit être de type int et rien d'autre, ainsi de cette
+    # manière, on retrouve bien dans l'url de l'utilisateur :
+    # /recette/3 pour afficher la recette ayant l'identifiant 3.
     path('recette/<int:primary_key>', views.recette_detail_view, name='recette-detail'),
     path('__debug__/', include(debug_toolbar.urls)),
 ]

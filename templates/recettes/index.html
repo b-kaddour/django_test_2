@@ -1,9 +1,17 @@
+{# PATH : /template/recette/index.html #}
+
 {% extends 'base.html'%}
 {% block content %}
     <h1>Mon premier titre</h1>
-<ul>
-{% for x in recette %}
-    <li><a href="{% url 'recette-detail' x.id %}">{{x.titre}}</a><br> {{x.description}}</li>
-{% endfor %}
-</ul>
+    <ul>
+    {% for x in recette %}
+        {#
+            On modifie le lien pour indiquer deux éléments, le premier 'recette-detail' indique
+            la cible du lien, le deuxième x.id indique que le lien intègre l'id de la recette
+            dans l'url pour avoir /recette/3
+        #}
+
+        <li><a href="{% url 'recette-detail' x.id %}">{{x.titre}}</a><br> {{x.description}}</li>
+    {% endfor %}
+    </ul>
 {% endblock %}
