@@ -10,7 +10,7 @@ jobs:
       mariadb:
         image: mariadb:latest
         ports:
-          - 3306
+          - 3307
         env:
           MYSQL_DATABASE: comme_un_chef
           MYSQL_USER: kaddour
